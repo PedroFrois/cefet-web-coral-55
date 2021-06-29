@@ -1,12 +1,30 @@
 @import "fonts/ravie.css";
 @import "fonts/verdana.css";
+:root {
+  --cor-texto: #333;
+  --cor-fundo-pagina: #fff;
+  --cor-gradiente: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
+  --cor-borda-recipiente: #d3d3d3;
+  --cor-borda-cardapio: #aac0ae;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-texto: #cacaca;
+    --cor-fundo-pagina: #333;
+    --cor-gradiente: linear-gradient(to bottom, #3f2f9b, #08043d 80%);
+    --cor-borda-recipiente: #000000;
+    --cor-borda-cardapio: #000000;
+  }
+}
+
 html {
   min-height: 100vh;
 }
 
 body {
   font-family: "Verdana", "OpenSans", sans-serif;
-  background-color: #fff;
+  background-color: var(--cor-fundo-pagina);
   margin: 0;
   min-height: 100vh;
 }
@@ -20,29 +38,29 @@ strong {
 }
 
 #recipiente {
-  background-image: linear-gradient(to bottom, #f6f1b2, #4599b2 80%);
-  border-left: 1px solid #d3d3d3;
-  border-right: 1px solid #d3d3d3;
+  background-image: var(--cor-gradiente);
+  border-left: 1px solid var(--cor-borda-recipiente);
+  border-right: 1px solid var(--cor-borda-recipiente);
 }
 
 #cardapio {
   padding-left: 20px;
   padding-right: 20px;
   background-color: rgba(255, 255, 255, 0.2);
-  border-top: 1px solid #aac0ae;
-  border-bottom: 1px solid #aac0ae;
-  border-left: 1px solid #aac0ae;
+  border-top: 1px solid var(--cor-borda-cardapio);
+  border-bottom: 1px solid var(--cor-borda-cardapio);
+  border-left: 1px solid var(--cor-borda-cardapio);
 }
 
 #cardapio h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--cor-texto);
   margin-top: 30px;
 }
 
 #cardapio article {
   font-size: 14px;
-  color: #333;
+  color: var(--cor-texto);
 }
 
 /* EXERCÍCIO 2: layout da página */
@@ -94,7 +112,7 @@ strong {
 #cabecalho-pagina h2 {
   margin: 0;
   font-size: 24px;
-  color: #333;
+  color: var(--cor-texto);
   font-weight: normal;
   text-align: right;
 }
@@ -132,7 +150,7 @@ article {
   position: fixed;
   top: calc(50% - (84px / 2));
   left: -89px;
-  transition: left 100ms ease-out; 
+  transition: left 100ms ease-out;
 }
 
 #ticket:hover {
